@@ -1,0 +1,103 @@
+{
+  "navigation": {
+    "home": "Início",
+    "about": "Sobre",
+    "contact": "Contato",
+    "socialMedia": "Redes Sociais"
+  },
+  "common": {
+    "readMore": "Ler mais",
+    "loading": "Carregando...",
+    "error": "Erro",
+    "notFound": "Não encontrado",
+    "backToHome": "Voltar ao início",
+    "language": "Idioma",
+    "portuguese": "Português",
+    "english": "Inglês"
+  },
+  "hero": {
+    "title": "Matheus Delmaschio",
+    "subtitle": "Analista de Suporte & DevOps",
+    "description": "Analista de Suporte com foco em automação operacional, infraestrutura, DevOps e padronização de processos. Experiência com Python, Docker, Jenkins, CI/CD e suporte técnico Microsoft.",
+    "location": "São Paulo, SP",
+    "role": "Analista de Suporte",
+    "highlights": {
+      "automation": "⚡ Automação com Python & Selenium",
+      "devops": "🐳 CI/CD com Docker & Jenkins",
+      "infra": "🖥️ Infraestrutura & Linux",
+      "support": "🌐 Suporte Microsoft 365"
+    },
+    "stats": {
+      "experience": "Anos de Experiência",
+      "technologies": "Tecnologias",
+      "companies": "Empresas",
+      "languages": "Idiomas"
+    },
+    "cta": {
+      "experience": "Ver Experiência",
+      "contact": "Entrar em Contato",
+      "available": "Disponível para oportunidades"
+    }
+  },
+  "experience": {
+    "title": "Experiência Profissional",
+    "subtitle": "Minha trajetória profissional em tecnologia",
+    "current": "Atual"
+  },
+  "skills": {
+    "title": "Habilidades Técnicas",
+    "subtitle": "Tecnologias e ferramentas que utilizo no dia a dia",
+    "categories": {
+      "languages": "Linguagens",
+      "devops": "DevOps & CI/CD",
+      "infra": "Infraestrutura",
+      "tools": "Ferramentas & Outros"
+    }
+  },
+  "projects": {
+    "title": "Projetos",
+    "subtitle": "Alguns dos projetos que desenvolvi",
+    "viewProject": "Ver Projeto",
+    "viewCode": "Ver Código"
+  },
+  "about": {
+    "title": "Sobre Mim",
+    "subtitle": "Analista de Suporte e DevOps apaixonado por automação"
+  },
+  "contact": {
+    "title": "Contato",
+    "subtitle": "Vamos conversar sobre seus projetos",
+    "form": {
+      "name": "Nome",
+      "email": "E-mail",
+      "message": "Mensagem",
+      "send": "Enviar Mensagem",
+      "namePlaceholder": "Seu nome",
+      "emailPlaceholder": "seu@email.com",
+      "messagePlaceholder": "Escreva sua mensagem aqui..."
+    },
+    "info": {
+      "title": "Informações de Contato",
+      "email": "E-mail",
+      "social": "Redes Sociais",
+      "location": "Localização"
+    }
+  },
+  "metadata": {
+    "home": {
+      "title": "Matheus Delmaschio - Analista de Suporte & DevOps",
+      "description": "Analista de Suporte com foco em automação, DevOps, infraestrutura e padronização de processos. Experiência com Python, Docker, Jenkins e CI/CD.",
+      "keywords": ["analista de suporte", "devops", "automação", "python", "docker", "jenkins", "ci/cd", "infraestrutura", "linux", "matheus delmaschio"]
+    },
+    "about": {
+      "title": "Sobre",
+      "description": "Conheça a trajetória de Matheus Delmaschio: Analista de Suporte e DevOps com experiência em automação, infraestrutura e suporte técnico.",
+      "keywords": ["matheus delmaschio", "trajetória", "carreira tech", "analista de suporte", "devops", "automação"]
+    },
+    "contact": {
+      "title": "Contato",
+      "description": "Entre em contato com Matheus Delmaschio para oportunidades profissionais, parcerias ou dúvidas sobre tecnologia.",
+      "keywords": ["contato", "matheus delmaschio", "oportunidades", "parcerias", "tecnologia"]
+    }
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact",
+    "socialMedia": "Social Media"
+  },
+  "common": {
+    "readMore": "Read more",
+    "loading": "Loading...",
+    "error": "Error",
+    "notFound": "Not found",
+    "backToHome": "Back to home",
+    "language": "Language",
+    "portuguese": "Portuguese",
+    "english": "English"
+  },
+  "hero": {
+    "title": "Matheus Delmaschio",
+    "subtitle": "Support Analyst & DevOps",
+    "description": "Support Analyst focused on operational automation, infrastructure, DevOps, and process standardization. Experience with Python, Docker, Jenkins, CI/CD, and Microsoft technical support.",
+    "location": "São Paulo, Brazil",
+    "role": "Support Analyst",
+    "highlights": {
+      "automation": "⚡ Automation with Python & Selenium",
+      "devops": "🐳 CI/CD with Docker & Jenkins",
+      "infra": "🖥️ Infrastructure & Linux",
+      "support": "🌐 Microsoft 365 Support"
+    },
+    "stats": {
+      "experience": "Years of Experience",
+      "technologies": "Technologies",
+      "companies": "Companies",
+      "languages": "Languages"
+    },
+    "cta": {
+      "experience": "View Experience",
+      "contact": "Get in Touch",
+      "available": "Available for opportunities"
+    }
+  },
+  "experience": {
+    "title": "Professional Experience",
+    "subtitle": "My professional journey in technology",
+    "current": "Current"
+  },
+  "skills": {
+    "title": "Technical Skills",
+    "subtitle": "Technologies and tools I use daily",
+    "categories": {
+      "languages": "Languages",
+      "devops": "DevOps & CI/CD",
+      "infra": "Infrastructure",
+      "tools": "Tools & Others"
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Some of the projects I've built",
+    "viewProject": "View Project",
+    "viewCode": "View Code"
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "Support Analyst and DevOps enthusiast passionate about automation"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Let's talk about your projects",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "send": "Send Message",
+      "namePlaceholder": "Your name",
+      "emailPlaceholder": "your@email.com",
+      "messagePlaceholder": "Write your message here..."
+    },
+    "info": {
+      "title": "Contact Information",
+      "email": "Email",
+      "social": "Social Media",
+      "location": "Location"
+    }
+  },
+  "metadata": {
+    "home": {
+      "title": "Matheus Delmaschio - Support Analyst & DevOps",
+      "description": "Support Analyst focused on automation, DevOps, infrastructure, and process standardization. Experience with Python, Docker, Jenkins, and CI/CD.",
+      "keywords": ["support analyst", "devops", "automation", "python", "docker", "jenkins", "ci/cd", "infrastructure", "linux", "matheus delmaschio"]
+    },
+    "about": {
+      "title": "About",
+      "description": "Learn about Matheus Delmaschio's journey: Support Analyst and DevOps with experience in automation, infrastructure, and technical support.",
+      "keywords": ["matheus delmaschio", "journey", "tech career", "support analyst", "devops", "automation"]
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Get in touch with Matheus Delmaschio for professional opportunities, partnerships, or technology inquiries.",
+      "keywords": ["contact", "matheus delmaschio", "opportunities", "partnerships", "technology"]
+    }
+  }
+}
