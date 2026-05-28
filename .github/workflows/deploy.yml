@@ -1,0 +1,71 @@
+name: Build and Deploy Portfolio Webapp
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 8
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: "pnpm"
+
+      - name: Install deps
+        run: pnpm install --frozen-lockfile
+
+      - name: Build Next.js App
+        run: pnpm build
+
+      - name: Prepare Standalone Package
+        run: |
+          # O Next.js standalone precisa que as pastas public e static sejam movidas manualmente para dentro dele
+          cp -r public .next/standalone/public
+          cp -r .next/static .next/standalone/.next/static
+          
+          # Compacta os arquivos compilados da pasta standalone
+          cd .next/standalone
+          tar -czf ../../build.tar.gz .
+          cd ../..
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }} # Mesma Role OIDC da infra
+          aws-region: sa-east-1
+
+      - name: Upload Build Artifact to S3
+        run: |
+          aws s3 cp build.tar.gz s3://maschior-terraform-state/deploy/build.tar.gz
+
+      - name: Trigger Deploy via AWS SSM
+        run: |
+          aws ssm send-command \
+            --document-name "AWS-RunShellScript" \
+            --targets "Key=tag:Name,Values=portfolio-instance" \
+            --parameters 'commands=[
+              "mkdir -p /tmp/deploy",
+              "aws s3 cp s3://maschior-terraform-state/deploy/build.tar.gz /tmp/deploy/build.tar.gz --region sa-east-1",
+              "tar -xzf /tmp/deploy/build.tar.gz -C /var/www/portfolio",
+              "rm -rf /tmp/deploy",
+              "chown -R www-data:www-data /var/www/portfolio",
+              "pm2 restart portfolio || pm2 start /var/www/portfolio/server.js --name portfolio"
+            ]' \
+            --comment "Deploy Next.js build"
