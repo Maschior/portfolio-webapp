@@ -85,8 +85,8 @@ export function ContactHero() {
                       matheusrb8@outlook.com.br
                     </Link>
                     <br />
-                    <Link href="mailto:dev@maschior.com.br" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                      dev@maschior.com.br
+                    <Link href="mailto:dev@maschior.com" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                      dev@maschior.com
                     </Link>
                   </div>
                 </div>

@@ -34,7 +34,7 @@ const footerSections: FooterSection[] = [
     title: 'Contato',
     links: [
       { name: 'matheusrb8@outlook.com.br', href: 'mailto:matheusrb8@outlook.com.br', external: true },
-      { name: 'dev@maschior.com.br', href: 'mailto:dev@maschior.com.br', external: true },
+      { name: 'dev@maschior.com', href: 'mailto:dev@maschior.com', external: true },
     ],
   },
 ]
@@ -60,7 +60,7 @@ export function Footer() {
               <Link href="https://www.linkedin.com/in/matheusrdb" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors p-1" aria-label="LinkedIn">
                 <Linkedin className="h-4 w-4" />
               </Link>
-              <Link href="mailto:dev@maschior.com.br" className="text-muted-foreground hover:text-foreground transition-colors p-1" aria-label="Email">
+              <Link href="mailto:dev@maschior.com" className="text-muted-foreground hover:text-foreground transition-colors p-1" aria-label="Email">
                 <Mail className="h-4 w-4" />
               </Link>
             </div>

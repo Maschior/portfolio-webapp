@@ -6,7 +6,7 @@ export async function generateLocalizedMetadata(
   page: string,
 ): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: 'metadata' })
-  const baseUrl = 'https://maschior.com.br'
+  const baseUrl = 'https://maschior.com'
 
   const title = t(`${page}.title`)
   const description = t(`${page}.description`)
@@ -36,7 +36,7 @@ export function generateStructuredData(
   type: 'Person' | 'WebSite',
   data: Record<string, unknown>
 ) {
-  const baseUrl = 'https://maschior.com.br'
+  const baseUrl = 'https://maschior.com'
   const commonContext = { '@context': 'https://schema.org' }
 
   switch (type) {

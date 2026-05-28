@@ -6,7 +6,7 @@ https://github.com/Maschior
 
 Email de contato (para a página de contato):
 matheusrb8@outlook.com.br
-dev@maschior.com.br
+dev@maschior.com
 
 foto de perfil:
 ![](foto-perfil.png)
