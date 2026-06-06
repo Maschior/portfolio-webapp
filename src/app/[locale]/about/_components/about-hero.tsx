@@ -6,7 +6,7 @@ import { useTranslations } from 'next-intl'
 import { MapPin, GraduationCap, Briefcase, Globe, Code2 } from 'lucide-react'
 
 const quickFacts = [
-  { icon: GraduationCap, labelKey: 'fact1' },
+  // { icon: GraduationCap, labelKey: 'fact1' },
   { icon: Briefcase, labelKey: 'fact2' },
   { icon: MapPin, labelKey: 'fact3' },
   { icon: Globe, labelKey: 'fact4' },
