@@ -122,7 +122,10 @@
       "send": "Enviar Mensagem",
       "namePlaceholder": "Seu nome",
       "emailPlaceholder": "seu@email.com",
-      "messagePlaceholder": "Escreva sua mensagem aqui..."
+      "messagePlaceholder": "Escreva sua mensagem aqui...",
+      "sending": "Enviando...",
+      "success": "Mensagem enviada com sucesso!",
+      "error": "Ocorreu um erro ao enviar. Tente novamente."
     },
     "info": {
       "title": "Informações de Contato",

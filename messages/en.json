@@ -122,7 +122,10 @@
       "send": "Send Message",
       "namePlaceholder": "Your name",
       "emailPlaceholder": "your@email.com",
-      "messagePlaceholder": "Write your message here..."
+      "messagePlaceholder": "Write your message here...",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "An error occurred while sending. Please try again."
     },
     "info": {
       "title": "Contact Information",
