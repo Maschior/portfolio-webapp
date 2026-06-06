@@ -31,7 +31,7 @@ const projects: Project[] = [
     titleKey: 'site.title',
     descriptionKey: 'site.description',
     tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'i18n'],
-    github: 'https://github.com/Maschior/portfolio-project',
+    github: 'https://github.com/Maschior/portfolio-webapp',
   },
 ]
 
