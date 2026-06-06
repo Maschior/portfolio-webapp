@@ -7,8 +7,8 @@ import { ExternalLink, Github } from 'lucide-react'
 import * as FancyButton from '@/components/ui/fancy-button'
 
 interface Project {
-  title: string
-  description: string
+  titleKey: string
+  descriptionKey: string
   tags: string[]
   github?: string
   demo?: string
@@ -16,21 +16,22 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: 'EDI Automation Tool',
-    description: 'Aplicação desktop em Python para automação de processamento de arquivos EDI (DSNOs), utilizando Selenium para integração com Oracle EBS.',
-    tags: ['Python', 'Selenium', 'Oracle EBS', 'Desktop App'],
-    github: 'https://github.com/Maschior',
+    titleKey: 'dsno.title',
+    descriptionKey: 'dsno.description',
+    tags: ['Python', 'Selenium', 'Oracle EBS', 'Tkinter'],
+    github: 'https://github.com/Maschior/dsno-processor',
   },
   {
-    title: 'CI/CD Pipeline',
-    description: 'Esteira CI/CD com Docker e Jenkins para automação de operações e auditoria em ambientes Oracle, com geração de logs e relatórios.',
-    tags: ['Docker', 'Jenkins', 'CI/CD', 'Oracle'],
+    titleKey: 'portfolio.title',
+    descriptionKey: 'portfolio.description',
+    tags: ['Terraform', 'Ansible', 'AWS', 'CI/CD'],
+    github: 'https://github.com/Maschior/portfolio',
   },
   {
-    title: 'Site Pessoal',
-    description: 'Este site! Construído com Next.js, Tailwind CSS, e suporte a PT-BR e Inglês.',
+    titleKey: 'site.title',
+    descriptionKey: 'site.description',
     tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'i18n'],
-    github: 'https://github.com/Maschior',
+    github: 'https://github.com/Maschior/portfolio-project',
   },
 ]
 
@@ -47,10 +48,10 @@ export function ProjectsSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project) => (
-            <div key={project.title} className="card-modern p-6 space-y-4 flex flex-col">
+            <div key={project.titleKey} className="card-modern p-6 space-y-4 flex flex-col">
               <div className="flex-1 space-y-3">
-                <h3 className="text-lg font-semibold text-foreground">{project.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{project.description}</p>
+                <h3 className="text-lg font-semibold text-foreground">{t(project.titleKey)}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{t(project.descriptionKey)}</p>
                 <div className="flex flex-wrap gap-1.5">
                   {project.tags.map((tag) => (
                     <Badge key={tag} variant="outline" className="text-[10px] rounded-md px-2 py-0.5">

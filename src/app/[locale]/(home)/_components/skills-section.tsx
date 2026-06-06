@@ -2,7 +2,7 @@
 
 import { Badge } from '@/components/ui/badge'
 import { useTranslations } from 'next-intl'
-import { SiPython, SiJavascript, SiHtml5, SiDocker, SiJenkins, SiGit, SiLinux, SiMysql, SiGnubash, SiSelenium } from 'react-icons/si'
+import { SiPython, SiJavascript, SiHtml5, SiDocker, SiJenkins, SiGit, SiLinux, SiMysql, SiGnubash, SiSelenium, SiPostgresql, SiGitea } from 'react-icons/si'
 import { VscTerminalPowershell } from 'react-icons/vsc'
 import { TbBrandVscode } from 'react-icons/tb'
 import type { IconType } from 'react-icons'
@@ -17,11 +17,10 @@ const skillCategories: SkillCategory[] = [
     nameKey: 'languages',
     skills: [
       { name: 'Python', icon: SiPython },
+      { name: 'Shell Script (Bash)', icon: SiGnubash },
+      { name: 'SQL' },
       { name: 'JavaScript', icon: SiJavascript },
-      { name: 'HTML', icon: SiHtml5 },
-      { name: 'CSS' },
-      { name: 'Bash', icon: SiGnubash },
-      { name: 'PowerShell', icon: VscTerminalPowershell },
+      { name: 'HTML/CSS', icon: SiHtml5 },
     ],
   },
   {
@@ -29,7 +28,7 @@ const skillCategories: SkillCategory[] = [
     skills: [
       { name: 'Docker', icon: SiDocker },
       { name: 'Jenkins', icon: SiJenkins },
-      { name: 'Git', icon: SiGit },
+      { name: 'Git / Gitea', icon: SiGit },
       { name: 'CI/CD' },
       { name: 'Selenium', icon: SiSelenium },
     ],
@@ -37,23 +36,23 @@ const skillCategories: SkillCategory[] = [
   {
     nameKey: 'infra',
     skills: [
-      { name: 'Linux', icon: SiLinux },
+      { name: 'Linux (CentOS, Ubuntu)', icon: SiLinux },
       { name: 'Windows Server' },
-      { name: 'DNS / DHCP' },
-      { name: 'Firewall' },
-      { name: 'Active Directory' },
+      { name: 'pfSense' },
+      { name: 'Proxy Squid' },
+      { name: 'Samba' },
       { name: 'MySQL', icon: SiMysql },
+      { name: 'PostgreSQL', icon: SiPostgresql },
+      { name: 'SQL Server' },
     ],
   },
   {
     nameKey: 'tools',
     skills: [
-      { name: 'VS Code', icon: TbBrandVscode },
       { name: 'Oracle EBS' },
+      { name: 'ServiceNow' },
       { name: 'Microsoft 365' },
-      { name: 'Graph Explorer' },
-      { name: 'Entra ID' },
-      { name: 'SharePoint' },
+      { name: 'VS Code', icon: TbBrandVscode },
     ],
   },
 ]

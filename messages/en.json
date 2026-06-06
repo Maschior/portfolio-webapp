@@ -17,15 +17,15 @@
   },
   "hero": {
     "title": "Matheus Delmaschio",
-    "subtitle": "Support Analyst & DevOps",
-    "description": "Support Analyst focused on operational automation, infrastructure, DevOps, and process standardization. Experience with Python, Docker, Jenkins, CI/CD, and Microsoft technical support.",
+    "subtitle": "Python Automation Analyst | Cloud Infrastructure & DevOps",
+    "description": "Infrastructure professional with over 4 years of experience, specialized in modernizing support operations through DevOps culture and Automation Engineering. Strong experience in Python scripting, containerization (Docker), and building CI/CD pipelines (Jenkins, Git).",
     "location": "São Paulo, Brazil",
-    "role": "Support Analyst",
+    "role": "Python Automation Analyst",
     "highlights": {
       "automation": "⚡ Automation with Python & Selenium",
       "devops": "🐳 CI/CD with Docker & Jenkins",
-      "infra": "🖥️ Infrastructure & Linux",
-      "support": "🌐 Microsoft 365 Support"
+      "infra": "🖥️ Infrastructure & Cloud",
+      "support": "📂 Docs-as-Code (MkDocs)"
     },
     "stats": {
       "experience": "Years of Experience",
@@ -42,27 +42,75 @@
   "experience": {
     "title": "Professional Experience",
     "subtitle": "My professional journey in technology",
-    "current": "Current"
+    "current": "Current",
+    "softtek": {
+      "role": "Support & Automation Analyst",
+      "period": "March 2025",
+      "desc1": "Hybrid role in Tier 2/3 technical support and Automation Engineering, transforming critical manual processes into automated, structured workflows.",
+      "desc2": "Mission-Critical Automation (Python): Developed a Python solution using Selenium for web automation and CLI/Tkinter interface to process EDI files (DSNOs) integrated with Oracle EBS.",
+      "desc3": "Impact: Reduced processing time from 10 minutes per file to seconds (~150 high-value financial files/month — ~$1M USD), eliminating 99% of human error failures.",
+      "desc4": "DevOps Culture & CI/CD: Implemented CI/CD pipelines using Jenkins and Gitea, structuring strategic code versioning (dev/prod) and automated deployments via webhooks, along with application containerization using Docker.",
+      "desc5": "Documentation Engineering (Docs-as-Code): Structured the team's technical knowledge base by migrating over 1,900 documents to Markdown using MkDocs, optimizing resolution times with full-text search.",
+      "desc6": "ITSM Optimization: Automated ServiceNow templates via scripts, standardizing incident closures (Resolution Notes) and improving support metrics and governance."
+    },
+    "teleperformance": {
+      "role": "Bilingual Technical Support Analyst",
+      "period": "May 2023 – March 2025",
+      "desc1": "Global support in English to corporate clients for advanced troubleshooting within the Microsoft ecosystem (M365, Windows).",
+      "desc2": "Technical review and validation of internal documentation (KBs), ensuring process precision applied on a global scale with a focus on Customer Experience."
+    },
+    "calvo": {
+      "role": "IT Apprentice (Infrastructure/Networks)",
+      "period": "December 2021 – December 2022",
+      "desc1": "Deployment and administration of firewall (pfSense), Proxy (Squid), and endpoint security (Kaspersky).",
+      "desc2": "Maintenance and support of Linux/Windows servers and deployment of custom ERP software."
+    },
+    "sonolayer": {
+      "role": "IT Infrastructure Intern",
+      "period": "April 2020 – December 2021",
+      "desc1": "Created Shell scripts (Bash) for batch configuration automation on Linux servers and workstations.",
+      "desc2": "Integrated Linux machines into Active Directory and ported Delphi systems (Windows) to Linux via Wine.",
+      "desc3": "Maintained SQL databases (query and report creation) and administered physical Dell servers."
+    }
   },
   "skills": {
     "title": "Technical Skills",
     "subtitle": "Technologies and tools I use daily",
     "categories": {
-      "languages": "Languages",
+      "languages": "Languages & Scripts",
       "devops": "DevOps & CI/CD",
-      "infra": "Infrastructure",
-      "tools": "Tools & Others"
+      "infra": "Infrastructure & Networks",
+      "tools": "Corporate Systems & Tools"
     }
   },
   "projects": {
     "title": "Projects",
     "subtitle": "Some of the projects I've built",
     "viewProject": "View Project",
-    "viewCode": "View Code"
+    "viewCode": "View Code",
+    "dsno": {
+      "title": "DSNO Processor",
+      "description": "Python solution using Selenium for web automation and CLI/Tkinter interface to process EDI files (DSNOs) integrated with Oracle EBS."
+    },
+    "portfolio": {
+      "title": "Portfolio (Terraform + AWS)",
+      "description": "Personal portfolio infrastructure project using Terraform, Ansible, and AWS for automated deployment and tests."
+    },
+    "site": {
+      "title": "Personal Site",
+      "description": "This portfolio website! Built with Next.js, Tailwind CSS, TypeScript, and multi-language support (i18n)."
+    }
   },
   "about": {
     "title": "About Me",
-    "subtitle": "Support Analyst and DevOps enthusiast passionate about automation"
+    "subtitle": "Support Analyst and DevOps enthusiast passionate about automation",
+    "bio1": "Infrastructure professional with over 4 years of experience, specialized in modernizing support operations through DevOps culture and Automation Engineering. Strong experience in Python scripting, containerization (Docker), and building CI/CD pipelines (Jenkins, Git), transforming critical manual processes into execution flows in seconds.",
+    "bio2": "Currently working at Softtek, allocated at Cummins, where I act in a hybrid capacity between Tier 2/3 technical support and Automation Engineering, developing robust solutions with Python and Selenium, implementing CI/CD pipelines, and structuring Docs-as-Code knowledge bases via MkDocs.",
+    "bio3": "I seek to work in reliability engineering and infrastructure automation, focusing on transitioning to Cloud environments. I believe in digital transformation as a means to optimize governance, security, and agility in IT operations.",
+    "fact1": "High School Graduate",
+    "fact2": "Softtek (Cummins) - Current",
+    "fact3": "São Paulo, Brazil",
+    "fact4": "Portuguese & English"
   },
   "contact": {
     "title": "Contact",
@@ -85,19 +133,44 @@
   },
   "metadata": {
     "home": {
-      "title": "Matheus Delmaschio - Support Analyst & DevOps",
-      "description": "Support Analyst focused on automation, DevOps, infrastructure, and process standardization. Experience with Python, Docker, Jenkins, and CI/CD.",
-      "keywords": ["support analyst", "devops", "automation", "python", "docker", "jenkins", "ci/cd", "infrastructure", "linux", "matheus delmaschio"]
+      "title": "Matheus Delmaschio - Python Automation Analyst | Cloud Infrastructure & DevOps",
+      "description": "Infrastructure professional with over 4 years of experience, specialized in modernizing support operations through DevOps culture and Automation Engineering.",
+      "keywords": [
+        "python automation analyst",
+        "devops",
+        "automation",
+        "python",
+        "docker",
+        "jenkins",
+        "ci/cd",
+        "infrastructure",
+        "linux",
+        "cloud",
+        "matheus delmaschio"
+      ]
     },
     "about": {
       "title": "About",
-      "description": "Learn about Matheus Delmaschio's journey: Support Analyst and DevOps with experience in automation, infrastructure, and technical support.",
-      "keywords": ["matheus delmaschio", "journey", "tech career", "support analyst", "devops", "automation"]
+      "description": "Learn about Matheus Delmaschio's journey: Python Automation Analyst and DevOps with experience in automation, infrastructure, and technical support.",
+      "keywords": [
+        "matheus delmaschio",
+        "journey",
+        "tech career",
+        "support analyst",
+        "devops",
+        "automation"
+      ]
     },
     "contact": {
       "title": "Contact",
       "description": "Get in touch with Matheus Delmaschio for professional opportunities, partnerships, or technology inquiries.",
-      "keywords": ["contact", "matheus delmaschio", "opportunities", "partnerships", "technology"]
+      "keywords": [
+        "contact",
+        "matheus delmaschio",
+        "opportunities",
+        "partnerships",
+        "technology"
+      ]
     }
   }
 }

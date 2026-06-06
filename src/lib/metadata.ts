@@ -47,9 +47,14 @@ export function generateStructuredData(
         name: 'Matheus Rubens Delmaschio Borges',
         url: baseUrl,
         image: `${baseUrl}/foto-perfil.png`,
-        jobTitle: 'Analista de Suporte & DevOps',
+        jobTitle: 'Analista de Automação Python | Infraestrutura Cloud & DevOps',
         worksFor: { '@type': 'Organization', name: 'Softtek (Cummins)' },
-        knowsAbout: ['Python', 'Docker', 'Jenkins', 'CI/CD', 'DevOps', 'Linux', 'Selenium', 'JavaScript'],
+        knowsAbout: [
+          'Python', 'Docker', 'Jenkins', 'CI/CD', 'DevOps', 'Linux', 'Selenium',
+          'JavaScript', 'SQL', 'Shell Script', 'Bash', 'PowerShell', 'Gitea',
+          'pfSense', 'Squid', 'Samba', 'MySQL', 'PostgreSQL', 'SQL Server',
+          'Oracle EBS', 'ServiceNow', 'Microsoft 365'
+        ],
         sameAs: ['https://www.linkedin.com/in/matheusrdb', 'https://github.com/Maschior'],
         ...data,
       }

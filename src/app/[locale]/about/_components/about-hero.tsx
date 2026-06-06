@@ -6,17 +6,17 @@ import { useTranslations } from 'next-intl'
 import { MapPin, GraduationCap, Briefcase, Globe, Code2 } from 'lucide-react'
 
 const quickFacts = [
-  { icon: GraduationCap, label: 'Ensino Médio Completo' },
-  { icon: Briefcase, label: 'Softtek (Cummins) - Atual' },
-  { icon: MapPin, label: 'São Paulo, SP' },
-  { icon: Globe, label: 'Português & Inglês' },
+  { icon: GraduationCap, labelKey: 'fact1' },
+  { icon: Briefcase, labelKey: 'fact2' },
+  { icon: MapPin, labelKey: 'fact3' },
+  { icon: Globe, labelKey: 'fact4' },
 ]
 
 const techStack = [
-  'Python', 'JavaScript', 'Docker', 'Jenkins', 'Linux', 'Selenium',
-  'Git', 'MySQL', 'PowerShell', 'Bash', 'HTML', 'CSS',
-  'Oracle EBS', 'Microsoft 365', 'Entra ID', 'SharePoint',
-  'Active Directory', 'DNS', 'CI/CD', 'Graph Explorer',
+  'Python', 'Shell Script (Bash)', 'Docker', 'Jenkins', 'Git/Gitea', 'CI/CD',
+  'Selenium', 'SQL', 'MySQL', 'PostgreSQL', 'SQL Server', 'Linux (CentOS, Ubuntu Server)',
+  'Windows Server', 'pfSense', 'Proxy Squid', 'Samba', 'Oracle EBS',
+  'ServiceNow', 'Microsoft 365', 'HTML/CSS', 'JavaScript'
 ]
 
 export function AboutHero() {
@@ -39,9 +39,9 @@ export function AboutHero() {
 
             <div className="space-y-4">
               {quickFacts.map((fact) => (
-                <div key={fact.label} className="flex items-center gap-3 text-sm text-muted-foreground">
+                <div key={fact.labelKey} className="flex items-center gap-3 text-sm text-muted-foreground">
                   <fact.icon className="h-4 w-4 flex-shrink-0 text-primary" />
-                  <span>{fact.label}</span>
+                  <span>{t(fact.labelKey)}</span>
                 </div>
               ))}
             </div>
@@ -51,22 +51,9 @@ export function AboutHero() {
           <div className="lg:col-span-2 space-y-8">
             <div className="card-modern p-8 space-y-6">
               <div className="space-y-4 text-muted-foreground leading-relaxed">
-                <p>
-                  Sou Analista de Suporte com forte atuação em automação operacional, infraestrutura e DevOps.
-                  Minha jornada em tecnologia começou em 2020, quando iniciei como Estagiário de TI na Sonolayer,
-                  e desde então venho evoluindo constantemente.
-                </p>
-                <p>
-                  Atualmente trabalho na Softtek, alocado na Cummins, onde desenvolvo soluções de automação
-                  com Python e Selenium, implemento esteiras CI/CD com Docker e Jenkins, e administro
-                  infraestrutura Linux. Anteriormente, atuei na Teleperformance com suporte técnico Microsoft 365,
-                  incluindo Teams, SharePoint, OneDrive, Exchange e Entra ID.
-                </p>
-                <p>
-                  Minha paixão é transformar processos manuais e repetitivos em soluções automatizadas
-                  e eficientes. Acredito que a tecnologia deve servir para simplificar e melhorar
-                  o dia a dia das pessoas e organizações.
-                </p>
+                <p>{t('bio1')}</p>
+                <p>{t('bio2')}</p>
+                <p>{t('bio3')}</p>
               </div>
             </div>
 
