@@ -8,12 +8,13 @@ import { Link, usePathname } from '@/lib/navigation'
 import { useTranslations } from 'next-intl'
 import { useState } from 'react'
 import { FaGithub, FaLinkedin } from 'react-icons/fa6'
-import { RiCloseLine, RiHomeLine, RiMailLine, RiMenuLine, RiUserLine } from 'react-icons/ri'
+import { RiCloseLine, RiHomeLine, RiMailLine, RiMenuLine, RiUserLine, RiBriefcase3Line } from 'react-icons/ri'
 import { LogoHorizontal } from '../common'
 
 const getNavigationItems = (t: (key: string) => string) => [
   { name: t('navigation.home'), href: '/', icon: RiHomeLine },
   { name: t('navigation.about'), href: '/about', icon: RiUserLine },
+  { name: t('navigation.projects'), href: '/projects', icon: RiBriefcase3Line },
   { name: t('navigation.contact'), href: '/contact', icon: RiMailLine },
 ]
 

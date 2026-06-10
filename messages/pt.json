@@ -2,6 +2,7 @@
   "navigation": {
     "home": "Início",
     "about": "Sobre",
+    "projects": "Projetos",
     "contact": "Contato",
     "socialMedia": "Redes Sociais"
   },
@@ -173,6 +174,19 @@
         "oportunidades",
         "parcerias",
         "tecnologia"
+      ]
+    },
+    "projects": {
+      "title": "Projetos",
+      "description": "Conheça os projetos de Matheus Delmaschio: automação com Python, infraestrutura como código e desenvolvimento web.",
+      "keywords": [
+        "projetos",
+        "portfolio",
+        "automação python",
+        "terraform",
+        "next.js",
+        "devops",
+        "matheus delmaschio"
       ]
     }
   }
