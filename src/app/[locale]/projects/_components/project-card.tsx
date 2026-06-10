@@ -32,6 +32,7 @@ export function ProjectCard({ project, index, media }: ProjectCardProps) {
   const t = useTranslations('projects')
   const gradient = PALETTE[index % PALETTE.length]
   const videoRef = useRef<HTMLVideoElement>(null)
+  const hoverTimeoutRef = useRef<any>(null)
 
   const [isPhotoHovered, setIsPhotoHovered] = useState(false)
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -39,10 +40,19 @@ export function ProjectCard({ project, index, media }: ProjectCardProps) {
   const hasMedia = media && media.length > 0
   const coverMedia = hasMedia ? media[0] : null
 
+  // Clean up timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (hoverTimeoutRef.current) clearTimeout(hoverTimeoutRef.current)
+    }
+  }, [])
+
   // Auto-play/pause video thumbnail on hover
   useEffect(() => {
     if (videoRef.current && coverMedia?.type === 'video') {
       if (isPhotoHovered) {
+        // Load the video source on demand and play
+        videoRef.current.load()
         videoRef.current.play().catch(() => {})
       } else {
         videoRef.current.pause()
@@ -50,6 +60,18 @@ export function ProjectCard({ project, index, media }: ProjectCardProps) {
       }
     }
   }, [isPhotoHovered, coverMedia])
+
+  const handleMouseEnter = () => {
+    if (hoverTimeoutRef.current) clearTimeout(hoverTimeoutRef.current)
+    hoverTimeoutRef.current = setTimeout(() => {
+      setIsPhotoHovered(true)
+    }, 150)
+  }
+
+  const handleMouseLeave = () => {
+    if (hoverTimeoutRef.current) clearTimeout(hoverTimeoutRef.current)
+    setIsPhotoHovered(false)
+  }
 
   const handleCardClick = () => {
     if (hasMedia) {
@@ -70,8 +92,8 @@ export function ProjectCard({ project, index, media }: ProjectCardProps) {
       >
         {/* Media / Cover Container */}
         <div 
-          onMouseEnter={() => setIsPhotoHovered(true)}
-          onMouseLeave={() => setIsPhotoHovered(false)}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
           className="relative aspect-video overflow-hidden border-b border-border/10 bg-muted"
         >
           {coverMedia ? (
@@ -86,6 +108,7 @@ export function ProjectCard({ project, index, media }: ProjectCardProps) {
               <video 
                 ref={videoRef}
                 src={coverMedia.url} 
+                preload="none"
                 muted
                 loop
                 playsInline

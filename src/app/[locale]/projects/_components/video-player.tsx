@@ -32,29 +32,19 @@ export function VideoPlayer({
   const containerRef = useRef<HTMLDivElement>(null)
   const playerRef = useRef<ReturnType<typeof videojs> | null>(null)
 
+  // Initialize Video.js once on mount
   useEffect(() => {
     if (!containerRef.current) return
 
-    // Create a dynamic video element for video.js inside the container
     const videoElement = document.createElement('video-js')
     videoElement.classList.add('vjs-panda-skin', 'vjs-big-play-centered', 'vjs-fluid')
     containerRef.current.appendChild(videoElement)
 
-    // Initialize Video.js
     const player = videojs(videoElement, {
       controls,
-      autoplay,
-      muted,
-      loop,
       playbackRates: [0.5, 1, 1.25, 1.5, 2],
       responsive: true,
       fluid: true,
-      sources: [
-        {
-          src,
-          type: getMimeType(src),
-        },
-      ],
       controlBar: {
         children: [
           'playToggle',
@@ -70,7 +60,6 @@ export function VideoPlayer({
 
     playerRef.current = player
 
-    // Cleanup on unmount
     return () => {
       if (playerRef.current) {
         playerRef.current.dispose()
@@ -80,7 +69,28 @@ export function VideoPlayer({
         containerRef.current.innerHTML = ''
       }
     }
-  }, [src, controls, autoplay, muted, loop])
+  }, [])
+
+  // Update player source and attributes when props change
+  useEffect(() => {
+    const player = playerRef.current
+    if (player && src) {
+      player.src({
+        src,
+        type: getMimeType(src),
+      })
+      player.autoplay(autoplay)
+      player.muted(muted)
+      player.loop(loop)
+
+      if (autoplay) {
+        const playPromise = player.play()
+        if (playPromise && typeof playPromise.catch === 'function') {
+          playPromise.catch(() => {})
+        }
+      }
+    }
+  }, [src, autoplay, muted, loop])
 
   return (
     <div className={`w-full h-full flex items-center justify-center overflow-hidden rounded-lg ${className}`}>

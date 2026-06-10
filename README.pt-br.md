@@ -70,3 +70,11 @@ Para compilar a aplicação:
 pnpm run build
 pnpm run start
 ```
+
+## Alterações recentes
+- **Player de Vídeo Customizado (Skin Panda Video)**: Implementação de um wrapper React para `video.js` contendo taxas de reprodução dinâmicas, detecção de MIME, aceleração de hardware via GPU e descarte automático de memória. Visual inspirado no player Panda Video com botão central de play pulsante, barra de controle flutuante com desfoque de fundo (`backdrop-blur-md`).
+- **Carrossel de Mídia (Lightbox)**: Modal interativo desenvolvido com Framer Motion que escurece o fundo, exibindo imagens e vídeos do projeto com botões de paginação, controle por teclado (`Esc`, `ArrowLeft`, `ArrowRight`) e bloqueio de rolagem da página.
+- **API Dinâmica de Varredura de Arquivos**: Criação do endpoint `/api/project-images` para fazer a leitura em tempo de execução dos arquivos sob `public/projects/[slug]`, classificando extensões e ordenando as capas no início.
+- **Destaque por Zoom e Debounce nos Cards**: Zoom de foco ao passar o mouse (`scale-[1.04]`, elevação e sombra 2xl) integrado a um delay de `150ms` (debounce) nos disparadores de vídeo e carregamento sob demanda (`preload="none"`) para otimização de largura de banda.
+- **Integração de Envio com EmailJS**: Envio do formulário de contato integrado com as APIs do EmailJS, incluindo validações de campo, mensagens de feedback de envio e traduções localizadas.
+

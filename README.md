@@ -9,7 +9,7 @@
 Welcome to the repository of my personal portfolio website. This is a modern, responsive, and fully localized (i18n) web application built using Next.js 15, Tailwind CSS, and Framer Motion.
 
 ## Live Demo
-You can access my live portfolio at: [maschior.com](https://maschior.com) (or your domain)
+You can access my live portfolio at: [maschior.com](https://maschior.com)
 
 ## Features
 - **Bilingual Support (i18n):** Complete routing and content translation for English and Portuguese via `next-intl`.
@@ -70,3 +70,11 @@ To build the application:
 pnpm run build
 pnpm run start
 ```
+
+## Recent changes
+- **Custom `video.js` Video Player (Panda Video Skin)**: Implemented a robust React wrapper for `video.js` featuring custom playback rates, MIME detection, GPU-hardware acceleration, and memory cleanup. Styled after the Panda Video player with a pulsing circular play button, floating rounded control bar, and glassmorphic blur (`backdrop-blur-md`).
+- **Lightbox Media Carousel**: Implemented a modal popup using Framer Motion that darkens and blurs the viewport, displaying images and videos with pagination controls, keyboard shortcuts (`Esc`, `ArrowLeft`, `ArrowRight`), and body scroll lock.
+- **Dynamic Media Discovery API**: Created `/api/project-images` to scan directory files under `public/projects/[project]` dynamically for image and video formats, sorting cover files first.
+- **Hover Zoom & Debounced Previews**: Added interactive focus styling to project cards (scales to `1.04`, elevates `-translate-y-2`, shadow-2xl) with a `150ms` hover trigger delay (debounce) and `preload="none"` on video thumbnails to prevent network and CPU spikes.
+- **Contact Form EmailJS Integration**: Integrated EmailJS API to send contact form submissions, complete with form validation, submission states, and multilingual translations.
+

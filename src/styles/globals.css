@@ -275,14 +275,19 @@
   height: 100% !important;
 }
 
+/* Force hardware acceleration on the video tag */
+.video-js.vjs-panda-skin video {
+  transform: translate3d(0, 0, 0) !important;
+  backface-visibility: hidden !important;
+}
+
 /* Big Play Button (Center Play Button) */
 .video-js.vjs-panda-skin .vjs-big-play-button {
   width: 4.5rem !important;
   height: 4.5rem !important;
-  line-height: 4.5rem !important;
   border-radius: 50% !important;
   border: none !important;
-  background-color: #10B981 !important; /* matches site color theme */
+  background-color: #10B981 !important;
   color: #ffffff !important;
   position: absolute !important;
   top: 50% !important;
@@ -291,6 +296,9 @@
   margin: 0 !important;
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 0 0 0 rgba(16, 185, 129, 0.5) !important;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 /* Pulsing effect on play button */
@@ -324,13 +332,19 @@
   box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.4), 0 0 0 8px rgba(16, 185, 129, 0) !important;
 }
 
+/* Center icon placement */
 .video-js.vjs-panda-skin .vjs-big-play-button .vjs-icon-placeholder::before {
   font-size: 2rem !important;
-  line-height: 4.5rem !important;
-  margin-left: 2px; /* aligns play arrow in circle */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  margin-left: 0.25rem !important; /* aligns the play arrow visually in the circle */
 }
 
-/* Hide big play button when playing or loading */
+/* Hide big play button when playing or loaded */
 .video-js.vjs-panda-skin.vjs-has-started .vjs-big-play-button {
   display: none !important;
 }
@@ -342,7 +356,7 @@
   -webkit-backdrop-filter: blur(12px) !important;
   border: 1px solid rgba(255, 255, 255, 0.08) !important;
   border-radius: 0.75rem !important;
-  height: 3.5rem !important;
+  height: 3.25rem !important;
   bottom: 0.75rem !important;
   left: 0.75rem !important;
   right: 0.75rem !important;
@@ -350,40 +364,55 @@
   padding: 0 0.5rem !important;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5) !important;
   transition: opacity 0.3s, transform 0.3s !important;
-}
-
-/* Control buttons inside bar */
-.video-js.vjs-panda-skin .vjs-control {
-  width: 3rem !important;
-  height: 100% !important;
   display: flex !important;
   align-items: center !important;
-  justify-content: center !important;
 }
 
+/* Normalize and align control items */
+.video-js.vjs-panda-skin .vjs-control {
+  width: 2.75rem !important;
+  height: 100% !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Center all icons inside standard control buttons */
+.video-js.vjs-panda-skin .vjs-control::before,
 .video-js.vjs-panda-skin .vjs-button > .vjs-icon-placeholder::before {
-  font-size: 1.4rem !important;
-  line-height: 3.5rem !important;
+  position: static !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: 100% !important;
+  font-size: 1.25rem !important;
+  line-height: 1 !important;
 }
 
 /* Custom Progress/Scrub Bar */
 .video-js.vjs-panda-skin .vjs-progress-control {
-  height: 100% !important;
+  flex: 1 !important;
   display: flex !important;
   align-items: center !important;
-  margin-right: 0.5rem !important;
+  height: 100% !important;
+  margin: 0 0.75rem !important;
+  min-width: 100px !important;
 }
 
 .video-js.vjs-panda-skin .vjs-progress-holder {
   height: 5px !important;
   border-radius: 4px !important;
-  background-color: rgba(255, 255, 255, 0.2) !important;
+  background-color: rgba(255, 255, 255, 0.15) !important;
   margin: 0 !important;
+  width: 100% !important;
   transition: height 0.15s !important;
 }
 
 .video-js.vjs-panda-skin .vjs-progress-holder:hover {
-  height: 8px !important;
+  height: 7px !important;
 }
 
 /* Progress Fill Color */
@@ -394,7 +423,7 @@
 
 /* Progress Play Progress Circle/Thumb */
 .video-js.vjs-panda-skin .vjs-play-progress::before {
-  font-size: 0.8rem !important;
+  font-size: 0.85rem !important;
   line-height: 1 !important;
   top: -3px !important;
   color: #ffffff !important;
@@ -407,21 +436,65 @@
   color: rgba(255, 255, 255, 0.8) !important;
   display: flex !important;
   align-items: center !important;
+  justify-content: center !important;
   min-width: unset !important;
-  padding: 0 0.25rem !important;
+  width: auto !important;
+  padding: 0 0.35rem !important;
+  height: 100% !important;
 }
 
-/* Settings, speed and volume styling details */
+/* Current time / Duration displays */
+.video-js.vjs-panda-skin .vjs-current-time,
+.video-js.vjs-panda-skin .vjs-duration {
+  display: flex !important;
+}
+
+.video-js.vjs-panda-skin .vjs-current-time-display,
+.video-js.vjs-panda-skin .vjs-duration-display {
+  font-family: inherit !important;
+}
+
+/* Volume Panel layout */
+.video-js.vjs-panda-skin .vjs-volume-panel {
+  display: inline-flex !important;
+  align-items: center !important;
+  width: auto !important;
+  margin-left: 0.5rem !important;
+}
+
+.video-js.vjs-panda-skin .vjs-volume-control {
+  display: flex !important;
+  align-items: center !important;
+  transition: width 0.2s, opacity 0.2s !important;
+}
+
 .video-js.vjs-panda-skin .vjs-volume-bar {
-  margin: 1.35rem 0.45rem !important;
+  margin: 0 !important;
+  display: flex !important;
+  align-items: center !important;
 }
 
 .video-js.vjs-panda-skin .vjs-volume-level {
   background: #ffffff !important;
 }
 
+/* Speed/Playback settings button menu */
+.video-js.vjs-panda-skin .vjs-playback-rate {
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+.video-js.vjs-panda-skin .vjs-playback-rate .vjs-playback-rate-value {
+  font-size: 0.85rem !important;
+  line-height: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 100% !important;
+}
+
 .video-js.vjs-panda-skin .vjs-menu-button-popup .vjs-menu {
-  bottom: 3.8rem !important;
+  bottom: 3.5rem !important;
 }
 
 .video-js.vjs-panda-skin .vjs-menu-content {
@@ -437,10 +510,15 @@
   margin: 0.15rem 0.3rem !important;
   padding: 0.4rem 0.8rem !important;
   font-size: 0.85rem !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.video-js.vjs-panda-skin .vjs-menu-item:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  color: #ffffff !important;
 }
 
 .video-js.vjs-panda-skin .vjs-menu-item.vjs-selected {
   background-color: #10B981 !important;
   color: #ffffff !important;
 }
-
