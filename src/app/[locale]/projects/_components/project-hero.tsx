@@ -1,9 +1,16 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
+import { useState, useEffect } from 'react'
 import { ProjectCard } from './project-card'
 
-interface Project {
+export interface ProjectMedia {
+  url: string
+  type: 'image' | 'video'
+}
+
+export interface Project {
+  id: string
   titleKey: string
   descriptionKey: string
   tags: string[]
@@ -13,18 +20,21 @@ interface Project {
 
 const projects: Project[] = [
   {
+    id: 'dsno-processor',
     titleKey: 'dsno.title',
     descriptionKey: 'dsno.description',
     tags: ['Python', 'Selenium', 'Oracle EBS', 'Tkinter'],
     github: 'https://github.com/Maschior/dsno-processor',
   },
   {
+    id: 'portfolio-infra',
     titleKey: 'portfolio.title',
     descriptionKey: 'portfolio.description',
     tags: ['Terraform', 'Ansible', 'AWS', 'CI/CD'],
     github: 'https://github.com/Maschior/portfolio',
   },
   {
+    id: 'portfolio-webapp',
     titleKey: 'site.title',
     descriptionKey: 'site.description',
     tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'i18n'],
@@ -34,6 +44,14 @@ const projects: Project[] = [
 
 export function ProjectHero() {
   const t = useTranslations('projects')
+  const [projectMediaMap, setProjectMediaMap] = useState<Record<string, ProjectMedia[]>>({})
+
+  useEffect(() => {
+    fetch('/api/project-images')
+      .then((res) => res.json())
+      .then((data) => setProjectMediaMap(data))
+      .catch((err) => console.error('Failed to load project media:', err))
+  }, [])
 
   return (
     <section className="bg-background">
@@ -47,7 +65,12 @@ export function ProjectHero() {
         {/* Grid de projetos — 3 colunas a partir de lg */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <ProjectCard key={project.titleKey} project={project} index={index} />
+            <ProjectCard 
+              key={project.id} 
+              project={project} 
+              index={index} 
+              media={projectMediaMap[project.id] || []} 
+            />
           ))}
         </div>
       </div>
